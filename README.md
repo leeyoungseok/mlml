@@ -4,7 +4,7 @@
 > K-pop lightstick choreography
 
 [![ACM Multimedia 2026 - Submitted](https://img.shields.io/badge/ACM%20MM%202026-Submitted-purple)]()
-[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)]([https://youtu.be/igY5h2HSNAQ](https://youtu.be/4xf9s3fa-oU))
+[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)]([[https://youtu.be/4xf9s3fa-oU])
 [![License](https://img.shields.io/badge/License-MIT-blue)]()
 
 ---

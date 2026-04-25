@@ -74,11 +74,11 @@ events:
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - 관객이 될께 | 16 | [▶ YouTube](링크) https://youtu.be/DDSjNIcno14  |
-| IU - Blueming | 16 | [▶ YouTube]([링크](https://youtu.be/KHmO7usMysU)) |
-| IU - Shopper | 16 | [▶ YouTube]([링크](https://youtu.be/DDSjNIcno14)) |
-| aespa - Supernova | 16 | [▶ YouTube]([링크](https://youtu.be/a_pUyoQBCkE)) |
-| MJ - Billie Jean | 16 | [▶ YouTube]([링크](https://youtu.be/BQ4oGPVca64)) |
+| IU - 관객이 될께 | 16 | [▶ https://youtu.be/DDSjNIcno14  |
+| IU - Blueming | 16 | [▶ (https://youtu.be/KHmO7usMysU)) |
+| IU - Shopper | 16 | [▶ (https://youtu.be/DDSjNIcno14)) |
+| aespa - Supernova | 16 | [▶ (https://youtu.be/a_pUyoQBCkE)) |
+| MJ - Billie Jean | 16 | [▶ (https://youtu.be/BQ4oGPVca64)) |
 
 ---
 

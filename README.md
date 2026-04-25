@@ -25,7 +25,7 @@
 ### Key Features
 
 - 🎵 Automatic music analysis (beat, section, mood)
-- 💡 BLE lightstick control (IU, Blackpink, NMIX, SEVENTEEN)
+- 💡 BLE lightstick control (IU, Blackpink, NMIX)
 - 📝 Human-readable YAML scenario format
 - 🤖 LLM-assisted scenario generation
 - 🎮 Real-time synchronization (≤100ms latency)
@@ -37,7 +37,6 @@
 | Artist | Device | Status |
 |--------|--------|--------|
 | IU (아이유) | 유애나봉 | ✅ Supported |
-| SEVENTEEN | 캐럿봉 | ✅ Supported |
 | NMIX | 공식 응원봉 | ✅ Supported |
 | Blackpink | 공식 응원봉 | ✅ Supported |
 
@@ -74,8 +73,8 @@ events:
 | IU - 관객이 될께 | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
-| aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |
-| MJ - Billie Jean | 16 | [▶ YouTube](https://youtu.be/BQ4oGPVca64) |
+| Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |
+| Michael Jackson - Billie Jean | 16 | [▶ YouTube](https://youtu.be/BQ4oGPVca64) |
 
 ---
 

@@ -119,7 +119,7 @@ This project is part of ongoing research at
 ## Contact & Collaboration
 
 연구 협력, 파트너십 문의:  
-📧 yslee@cnu.ac.kr  
-🏫 Chungnam National University
+📧 lee@cnu.ac.kr  
+🏫 Data Network Lab. Chungnam National University
 
 ⭐ **Star this repo** to get notified when spec and code are released!

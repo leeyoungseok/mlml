@@ -88,14 +88,14 @@ This project is part of ongoing research at
 - 📄 Paper submitted to **ACM Multimedia 2026** Interactive Art Track
 - 🔬 Full specification and code releasing after publication
 
-### Citation (upcoming)
+### Citation (submitted for ACM MM Interactive Art Track, waiting for the result by June 2026)
 
 ```bibtex
 @inproceedings{mlml2026,
   title={MLML: An Open Music-to-Light Markup Language
          for Democratizing Fan Lightstick Choreography},
   author={Lee, Youngseok},
-  booktitle={ACM Multimedia 2026},
+  booktitle={submitted for ACM Multimedia 2026},
   year={2026}
 }
 ```

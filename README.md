@@ -11,7 +11,7 @@
 
 ## Demo — 12 Lightsticks Synchronized
 
-[![MLML Demo](유튜브썸네일이미지)]([https://youtu.be/igY5h2HSNAQ](https://studio.youtube.com/video/4xf9s3fa-oU/edit)
+[![MLML Demo](유튜브썸네일이미지)]([https://youtu.be/4xf9s3fa-oU)
 
 *12 IU (유애나) lightsticks synchronized in real-time using MLML player — no manual control.*
 

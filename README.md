@@ -20,9 +20,9 @@
 
 **MLML (Music-to-Light Markup Language)** is a YAML-based open specification that maps music structure to lightstick lighting events — automatically.
 
-현재 K-pop 공연장의 응원봉 조명은 기획사 서버가 무선 RF로 일괄 제어합니다. 
-본 연구는 팬이 집이나 소규모 팬 모임에서 소규모(10-20개 정도)로 직접 조명을 음악과 동기화를 하는 것을 목표로 합니다.
-음악과 동기화되는 조명 시나리오를 만들고 공유할 수 있는 개방형 대안으로 MLML을 제안하고 개발하고 있습니다. 
+- 현재 K-pop 공연장의 응원봉 조명은 기획사 서버가 무선 RF로 일괄 제어합니다. 
+- 본 연구는 팬이 집이나 소규모 팬 모임에서 소규모(10-20개 정도)로 직접 조명을 음악과 동기화를 하는 것을 목표로 합니다.
+- 음악과 동기화되는 조명 시나리오를 만들고 공유할 수 있는 개방형 대안으로 MLML을 제안하고 개발하고 있습니다. 
 
 ### Key Features
 

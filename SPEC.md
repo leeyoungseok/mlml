@@ -500,7 +500,7 @@ bookend: {fade_out_start: 240.0, fade_out_duration: 7.69, final_color: love}
 
 ---
 
-## 18. 의존성 & 설치
+## 16. 의존성 & 설치
 
 ```bash
 # 핵심 패키지

@@ -5,9 +5,9 @@
 | 항목 | 내용 |
 |---|---|
 | 버전 | 1.3 |
-| 작성자 | 이영석 (충남대학교 전기·정보통신공학부) |
+| 작성자 | 이영석 (충남대학교 컴퓨터인공지능학부 ) |
 | 라이선스 | Apache License 2.0 |
-| 포함 범위 | v1.0 + v1.1 + v1.2 전체 블록 + v1.3 신규 (lyric_map SRT, 라디오 프로파일, mp3_to_mlml) |
+| 포함 범위 | v1.0 + v1.1 + v1.2 전체 블록 + v1.3 신규 (lyric_map SRT, mp3_to_mlml) |
 
 ## 버전 히스토리
 
@@ -15,8 +15,8 @@
 |---|---|
 | v1.0 | 4계층 구조, 16종 단일 이펙트, 12종 공간 이펙트, EIC/SAS/TA |
 | v1.1 | `beat_reactive.on_kick`, `bass_track`, `color_cycle`, KFA/BBC/CCR |
-| v1.2 | `global_mood`, `section_defaults`, `expectation_break`, `bookend`, `lyric_map`, `spotlight`, CS/EBS/LCC |
-| v1.3 | `lyric_map` SRT 자동 파싱 + 8종 감정 사전, `mp3_to_mlml` 4단계 파이프라인, 라디오 3-class 세그멘테이션 프로파일, archetype 6종, LCC 메트릭 |
+| v1.2 | `global_mood`, `section_defaults`, `expectation_break`, `bookend`, `lyric_map`, `spotlight`|
+| v1.3 | `lyric_map` SRT 자동 파싱 + 8종 감정 사전, `mp3_to_mlml` 4단계 파이프라인, archetype 6종, LCC 메트릭 |
 
 ---
 
@@ -460,72 +460,7 @@ python mp3_to_mlml.py song.mp3 --save-analysis   # 분석 JSON 저장
 
 ---
 
-## 15. 라디오 3-class 세그멘테이션 프로파일 [v1.3]
-
-라디오 방송을 DJ 멘트 / 음악 / 광고 3개 클래스로 분류하고 각 클래스별 MLML 프로파일을 적용합니다.
-
-### 15.1 클래스 정의 및 감지
-
-| 클래스 | 감지 방법 | 신호 특징 | 조명 전략 |
-|---|---|---|---|
-| DJ 멘트 | pyannote 화자 감지, CLAP speech confidence 높음 | 사람 목소리 지배, 배경음악 낮거나 없음 | 목소리 에너지 → 색온도, 비트 반응 없음 |
-| 음악 재생 | CLAP 장르 confidence ≥ 0.85, 2초 이상 유지 | 악기+보컬 지배 | MLML 풀 파이프라인, 장르별 팔레트 + 비트 |
-| 광고 | CLAP 미스매치 감지 (기존 라디오 연구 연장) | 나레이터 + 배경음악 혼합 | 중성 백색, 비트 반응 끔 |
-
-### 15.2 다중 하드웨어 역할 분담
-
-| 구간 | 응원봉 (BLE) | LED 스트립 | Hue / 전구 |
-|---|---|---|---|
-| DJ 멘트 | 꺼짐 | 은은하게 유지 | 목소리 에너지 → 색온도 |
-| 음악 (팝/댄스) | 비트+장르 반응 | 공간 이펙트 | 배경 앰비언트 |
-| 음악 (발라드) | 부드러운 반응 | 잔잔한 파동 | 따뜻한 저조도 |
-| 광고 | 꺼짐 | 중성 백색 | 밝기 올림 (집중) |
-
-### 15.3 전환 감지 파라미터
-
-```
-CLAP confidence >= 0.85   # 신뢰도 임계값
-연속 유지 >= 2초           # 플리커링 방지
-조명 전환 fade = 2~5초    # 부드러운 전환
-# DJ ↔ 음악 cross-talk 처리
-음악 에너지 >= 70%  → 음악 class 유지
-목소리 에너지 >= 60% → DJ class 유지
-```
-
----
-
-## 16. 자동 평가 메트릭 9종
-
-### 16.1 Tier 1 — 필수 (v1.0)
-
-| 메트릭 | 수식 | 이상값 | 버전 |
-|---|---|---|---|
-| EIC | Pearson(RMS_energy, brightness) | 1.0 | v1.0 |
-| SAS | matched_bounds/total (±0.5초) | 1.0 | v1.0 |
-| TA | mean(\|beat − event\|) ms | 0ms | v1.0 |
-| KFA | kicks_with_flash/total (±30ms) | ≥0.9 | v1.1 |
-
-### 16.2 Tier 2 — 선택 (v1.1)
-
-| 메트릭 | 수식 | 이상값 | 버전 |
-|---|---|---|---|
-| BBC | Pearson(bass_energy, brightness) | ≥0.7 | v1.1 |
-| CCR | bar_color_changes_on_time/total | 1.0 | v1.1 |
-
-### 16.3 Tier 3 — Future Work (v1.2 / v1.3)
-
-| 메트릭 | 의미 | 이상값 | 버전 |
-|---|---|---|---|
-| CS | 코러스/버스 밝기 대비 비율 | ≥1.8 | v1.2 |
-| EBS | 암전 타이밍 ±50ms 정확도 | ≥0.9 | v1.2 |
-| LCC | 가사 감정-색상 온도 일치도 | ≥0.7 | v1.3 |
-
-핵심: EIC/SAS/TA/KFA를 측정하고 MOS(피험자 5점 평가)와 Spearman 상관계수로 검증해야
-논문 contribution이 됩니다.
-
----
-
-## 17. 완성 예시 — 아이유 「관객이 될게」(발췌)
+## 15. 완성 예시 — 아이유 「관객이 될게」(발췌)
 
 ```yaml
 metadata:

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use MLML, please cite the following paper."
+type: software
+title: "MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick Choreography"
+authors:
+  - family-names: "Lee"
+    given-names: "Yeongseok"
+    affiliation: "Chungnam National University"
+  - family-names: "Jin"
+    given-names: "Minhyuk"
+preferred-citation:
+  type: conference-paper
+  title: "MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick Choreography"
+  authors:
+    - family-names: "Lee"
+      given-names: "Yeongseok"
+    - family-names: "Jin"
+      given-names: "Minhyuk"
+  collection-title: "ACM Multimedia 2026, Interactive Art Track"
+  conference:
+    name: "ACM Multimedia 2026 (ACM MM '26)"
+    city: "Rio de Janeiro"
+    country: "BR"
+  year: 2026
+  month: 11
+  # TODO: DOI 및 페이지 번호는 카메라레디 제출 후 업데이트
+license: Apache-2.0
+repository-code: "https://github.com/TODO/mlml"

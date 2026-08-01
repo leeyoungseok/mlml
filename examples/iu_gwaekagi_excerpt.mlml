@@ -1,0 +1,73 @@
+# MLML v1.3 — 아이유 "관객이 될게" (발췌본)
+# SPEC.md §17 참고. 전체 타임라인이 아닌 대표 구간만 포함된 예시 파일입니다.
+
+metadata:
+  title: "관객이 될게"
+  artist: "아이유 (IU)"
+  bpm: 161.5
+  key: G_major
+  time_sig: "4/4"
+  duration: 247.69
+  genre: "k-pop"
+  mood: ["warm", "hopeful"]
+  archetype: BGM_SONG
+
+palette:
+  primary:   {hue: 210, sat: 0.7, val: 0.9}
+  secondary: {hue: 40,  sat: 0.8, val: 1.0}
+  peak:      {hue: 0,   sat: 1.0, val: 1.0}
+  neutral:   {hue: 200, sat: 0.2, val: 0.4}
+  love:      {hue: 350, sat: 0.9, val: 1.0}
+  hope:      {hue: 180, sat: 0.55, val: 0.9}
+  white:     {hue: 0,   sat: 0.0, val: 1.0}
+
+global_mood:
+  temperature: warm
+  intensity: 0.85
+  contrast: 0.75
+
+beat_reactive:
+  on_kick:  {color: white,     duration: 0.04, strength: 0.98}
+  on_snare: {color: secondary, duration: 0.05, strength: 0.50}
+
+bass_track:
+  follow: true
+  smooth: 0.1
+  freq_max: 200
+  min_val: 0.30
+  max_val: 1.00
+
+lyric_map:
+  enabled: true
+  source: srt
+  manual:
+    - time: 24.0
+      text: "사랑하는 사람들 앞에서"
+      color: love
+      brightness: 0.80
+      duration: 3.2
+    - time: 156.0
+      text: "I trust my you"
+      color: hope
+      brightness: 0.70
+      duration: 3.2
+
+expectation_break:
+  enabled: true
+  timing: last_beat
+  recovery: peak
+
+timeline:
+  - {t: 0.0,   group: 0, color: neutral,   effect: breath,          intensity: 0.30}
+  - {t: 8.0,   group: 0, color: primary,   effect: heart_pulse,     intensity: 0.60}
+  - {t: 8.0,   group: 1, spotlight: true,  bg_brightness: 0.15}
+  - {t: 44.0,  group: 0, color: secondary, effect: tension_build,   intensity: 0.80}
+  - {t: 47.5,  group: 0, color: null,      effect: expectation_break}
+  - {t: 48.0,  group: 0, color: peak,      effect: release_burst,   spatial: explosion}
+  - {t: 208.0, group: 0, color: love,      effect: breath,          intensity: 0.40}
+
+bookend:
+  fade_out_start: 240.0
+  fade_out_duration: 7.69
+  final_color: love
+  final_state: blackout

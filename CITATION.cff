@@ -4,7 +4,7 @@ type: software
 title: "MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick Choreography"
 authors:
   - family-names: "Lee"
-    given-names: "Yeongseok"
+    given-names: "Youngseok"
     affiliation: "Chungnam National University"
   - family-names: "Jin"
     given-names: "Minhyuk"
@@ -13,7 +13,7 @@ preferred-citation:
   title: "MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick Choreography"
   authors:
     - family-names: "Lee"
-      given-names: "Yeongseok"
+      given-names: "Youngseok"
     - family-names: "Jin"
       given-names: "Minhyuk"
   collection-title: "ACM Multimedia 2026, Interactive Art Track"
@@ -25,4 +25,4 @@ preferred-citation:
   month: 11
   # TODO: DOI 및 페이지 번호는 카메라레디 제출 후 업데이트
 license: Apache-2.0
-repository-code: "https://github.com/TODO/mlml"
+repository-code: "https://github.com/leeyoungseok/mlml"

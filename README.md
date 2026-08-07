@@ -83,7 +83,7 @@ timeline:
   - {t: 48.0, group: 0, color: peak,    effect: release_burst, spatial: explosion}
 ```
 
-전체 예시는 [`examples/iu_gwaekagi_excerpt.mlml`](examples/iu_gwaekagi_excerpt.mlml)에서
+전체 예시는 [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml)에서
 볼 수 있습니다.
 
 ---
@@ -92,7 +92,8 @@ timeline:
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - 관객이 될게 | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - 관객이 될게 (I Stan U) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
+| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |
@@ -129,7 +130,7 @@ This project is part of ongoing research at
 @inproceedings{mlml2026,
   title={MLML: An Open Music-to-Light Markup Language
          for Democratizing Fan Lightstick Choreography},
-  author={Lee, Yeongseok and Jin, Minhyuk},
+  author={Lee, Youngseok and Jin, Minhyuk},
   booktitle={ACM Multimedia 2026, Interactive Art Track},
   year={2026}
 }

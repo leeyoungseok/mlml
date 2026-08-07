@@ -1,0 +1,467 @@
+metadata:
+  title: 관객이 될께
+  artist: 아이유 (IU)
+  bpm: 161.5
+  key: G_major
+  time_sig: "4/4"
+  duration: 247.69
+  genre: k-pop
+  mood: [cheerful, romantic, energetic]
+  archetype: BGM_SONG
+
+palette:
+  primary:
+    hue: 210
+    sat: 0.7
+    val: 0.9
+  secondary:
+    hue: 40
+    sat: 0.8
+    val: 1.0
+  warm:
+    hue: 15
+    sat: 0.9
+    val: 1.0
+  cool:
+    hue: 240
+    sat: 0.6
+    val: 0.8
+  peak:
+    hue: 0
+    sat: 1.0
+    val: 1.0
+  neutral:
+    hue: 200
+    sat: 0.2
+    val: 0.4
+  white:
+    hue: 0
+    sat: 0.0
+    val: 1.0
+  love:
+    hue: 350
+    sat: 0.9
+    val: 1.0
+  happy:
+    hue: 45
+    sat: 0.9
+    val: 1.0
+  rose:
+    hue: 330
+    sat: 0.85
+    val: 0.95
+
+global_mood:
+  temperature: warm
+  intensity: 0.85
+  contrast: 0.75
+
+tempo_mode:
+  auto: true
+  override:
+    bars_per_change: 2
+    smooth: 0.05
+    hz_hi: 20
+
+motifs:
+  heart_pulse:
+    type: blink
+    on_beat: true
+    duty: 0.3
+    attack: fast
+    decay: slow
+    color: primary
+
+  tension_build:
+    type: brightness_ramp
+    curve: exponential
+    color_shift: toward_peak
+    blink_accelerate: true
+
+  release_burst:
+    type: flash_all
+    color: peak
+    duration: 0.1
+    then: fade_to_primary
+
+  breath:
+    type: brightness_sine
+    period: 4.0
+    min_val: 0.2
+    max_val: 0.8
+    color: neutral
+
+  expectation_break:
+    type: blackout_then_burst
+    blackout_duration: 0.5
+    blackout_beats: 1
+    burst_color: peak
+
+  spotlight_fade:
+    type: single_focus
+    brightness: 0.6
+    sat_reduce: 0.4
+
+  love_wave:
+    type: spatial_wave
+    direction: lr
+    speed: 1.0
+    color: love
+
+beat_reactive:
+  on_kick:
+    color: white
+    duration: 0.04
+    strength: 0.98
+  on_snare:
+    color: secondary
+    duration: 0.05
+    strength: 0.5
+
+bass_track:
+  follow: true
+  smooth: 0.1
+  freq_max: 200
+  min_val: 0.3
+  max_val: 1.0
+
+spatial:
+  layout: arena
+  dimensions: {rows: 4, cols: 5}
+  groups:
+    left_half:  {cols: [0, 1]}
+    right_half: {cols: [3, 4]}
+    front_row:  {rows: [0]}
+    back_row:   {rows: [3]}
+    center:     {rows: [1, 2], cols: [2]}
+  wave_origin: {row: 0, col: 0}
+  explosion_center: {row: 1.5, col: 2}
+  delay_per_col: 0.05
+  delay_per_row: 0.05
+  delay_per_unit: 0.03
+
+section_defaults:
+  intro:
+    effect: breath
+    color: neutral
+    intensity: 0.4
+  verse:
+    effect: heart_pulse
+    color: primary
+    intensity: 0.65
+    spotlight: true
+  prechorus:
+    effect: tension_build
+    color: secondary
+    intensity: 0.8
+    expectation_break: true
+  chorus:
+    effect: release_burst
+    color: peak
+    intensity: 1.0
+    spatial: explosion
+  bridge:
+    effect: spotlight_fade
+    color: cool
+    intensity: 0.55
+  outro:
+    effect: breath
+    color: love
+    intensity: 0.35
+
+timeline:
+  # ── 인트로 (0~8s) ──────────────────────────
+  - t: 0.0
+    group: 0
+    color: neutral
+    effect: breath
+    intensity: 0.3
+    note: "인트로 시작 — 조용히 숨쉬기"
+
+  - t: 4.0
+    group: 0
+    color: primary
+    effect: slow_pulse
+    intensity: 0.45
+    note: "인트로 후반 — 기대감 상승"
+
+  # ── 버스 1 (8~48s) ──────────────────────────
+  - t: 8.0
+    group: 0
+    color: primary
+    effect: heart_pulse
+    bpm_sync: true
+    intensity: 0.6
+    note: "버스 1 시작 — 심장박동"
+
+  - t: 8.0
+    group: 1
+    spotlight: true
+    bg_brightness: 0.15
+    note: "스포트라이트 — 보컬 포커스"
+
+  - t: 24.0
+    group: 0
+    color: secondary
+    effect: color_sweep
+    intensity: 0.55
+    note: "브릿지 구간 — 색상 변화"
+
+  - t: 36.0
+    group: 0
+    color: primary
+    effect: heart_pulse
+    bpm_sync: true
+    intensity: 0.65
+    note: "버스 재개"
+
+  # ── 프리코러스 1 (44~48s) ──────────────────
+  - t: 44.0
+    group: 0
+    color: secondary
+    effect: tension_build
+    intensity: 0.8
+    note: "프리코러스 — 긴장감 상승"
+
+  - t: 47.5
+    group: 0
+    color: null
+    effect: expectation_break
+    note: "암전 — 코러스 직전 1박"
+
+  # ── 코러스 1 (48~72s) ──────────────────────
+  - t: 48.0
+    group: 0
+    color: peak
+    effect: release_burst
+    intensity: 1.0
+    spatial: explosion
+    note: "🔥 코러스 폭발!"
+
+  - t: 50.0
+    group: 0
+    color: love
+    effect: fast_strobe
+    bpm_sync: true
+    hz: 12.0
+    intensity: 0.95
+    note: "코러스 — 고속 스트로브"
+
+  - t: 56.0
+    group: 1
+    color: peak
+    effect: wave_lr
+    intensity: 1.0
+    note: "섹션 분리 웨이브"
+
+  - t: 56.0
+    group: 2
+    color: love
+    effect: wave_lr
+    intensity: 0.9
+    note: "반대편 섹션 웨이브"
+
+  - t: 60.0
+    group: 0
+    color: rose
+    effect: color_sweep
+    intensity: 0.9
+    note: "코러스 후반 — 로즈 색상"
+
+  # ── 버스 2 (72~100s) ──────────────────────
+  - t: 72.0
+    group: 0
+    color: primary
+    effect: heart_pulse
+    bpm_sync: true
+    intensity: 0.65
+    note: "버스 2"
+
+  - t: 80.0
+    group: 1
+    color: warm
+    effect: spotlight_fade
+    intensity: 0.6
+    note: "섹션 1 스포트라이트"
+
+  - t: 88.0
+    group: 2
+    color: cool
+    effect: spotlight_fade
+    intensity: 0.6
+    note: "섹션 2 스포트라이트"
+
+  - t: 96.0
+    group: 0
+    color: secondary
+    effect: tension_build
+    intensity: 0.85
+    note: "두 번째 코러스 직전 긴장"
+
+  # ── 코러스 2 (100~128s) ────────────────────
+  - t: 100.0
+    group: 0
+    color: peak
+    effect: release_burst
+    intensity: 1.0
+    spatial: explosion
+    note: "🔥 코러스 2 폭발!"
+
+  - t: 104.0
+    group: 0
+    color: love
+    effect: rainbow
+    intensity: 1.0
+    note: "무지개 — 최고 에너지"
+
+  - t: 108.0
+    group: 0
+    color: peak
+    effect: fast_strobe
+    bpm_sync: true
+    hz: 15.0
+    intensity: 1.0
+    note: "고속 스트로브 강화"
+
+  - t: 112.0
+    group: 1
+    color: warm
+    effect: call_and_response
+    note: "좌우 교대 응원"
+
+  - t: 112.0
+    group: 2
+    color: cool
+    effect: call_and_response
+    note: "좌우 교대 응원 반대편"
+
+  # ── 브릿지 (156~164s) ──────────────────────
+  - t: 156.0
+    group: 0
+    color: cool
+    effect: dim_glow
+    val: 0.25
+    intensity: 0.4
+    note: "브릿지 — 차분하게 낮춤"
+
+  - t: 160.0
+    group: 1
+    color: love
+    effect: breath
+    period: 4.0
+    intensity: 0.45
+    note: "브릿지 섹션 1 — 숨쉬기"
+
+  # ── 클라이맥스 진입 (164~168s) ────────────
+  - t: 164.0
+    group: 0
+    color: secondary
+    effect: tension_build
+    intensity: 0.9
+    note: "클라이맥스 직전 최대 긴장"
+
+  - t: 167.5
+    group: 0
+    color: null
+    effect: expectation_break
+    note: "마지막 암전"
+
+  # ── 최종 코러스 (168~208s) ─────────────────
+  - t: 168.0
+    group: 0
+    color: peak
+    effect: release_burst
+    intensity: 1.0
+    spatial: explosion
+    note: "🔥🔥 최종 코러스 최대 폭발!"
+
+  - t: 170.0
+    group: 0
+    color: love
+    effect: fast_strobe
+    bpm_sync: true
+    hz: 18.0
+    intensity: 1.0
+    note: "최대 스트로브"
+
+  - t: 176.0
+    group: 0
+    color: rose
+    effect: rainbow
+    intensity: 1.0
+    note: "무지개 최대 밝기"
+
+  - t: 184.0
+    group: 0
+    color: peak
+    effect: release_burst
+    intensity: 1.0
+    spatial: diagonal_wave
+    note: "대각선 웨이브"
+
+  - t: 192.0
+    group: 1
+    color: love
+    effect: wave_lr
+    note: "섹션 웨이브 좌→우"
+
+  - t: 192.0
+    group: 2
+    color: warm
+    effect: wave_lr
+    note: "섹션 웨이브 동시"
+
+  - t: 196.0
+    group: 0
+    color: rose
+    effect: color_sweep
+    intensity: 0.95
+    note: "마지막 색상 쓸기"
+
+  # ── 아웃트로 (208~247.69s) ─────────────────
+  - t: 208.0
+    group: 0
+    color: love
+    effect: breath
+    period: 6.0
+    intensity: 0.5
+    note: "아웃트로 시작 — 서서히 꺼짐"
+
+  - t: 220.0
+    group: 0
+    color: rose
+    effect: fade_inout
+    curve: logarithmic
+    intensity: 0.35
+    note: "페이드아웃"
+
+  - t: 235.0
+    group: 0
+    color: love
+    effect: breath
+    period: 8.0
+    intensity: 0.2
+    note: "마지막 숨쉬기"
+
+  - t: 245.0
+    group: 0
+    color: neutral
+    effect: fade_inout
+    curve: logarithmic
+    intensity: 0.1
+    note: "완전 암전"
+
+bookend:
+  fade_out_start: 240.0
+  fade_out_duration: 7.69
+  final_color: love
+
+lyric_map:
+  enabled: true
+  source: whisper
+  emotion_color:
+    love:      {hue: 350, sat: 0.9, val: 1.0}
+    happy:     {hue: 45,  sat: 0.9, val: 1.0}
+    romantic:  {hue: 330, sat: 0.85, val: 0.95}
+    cheerful:  {hue: 60,  sat: 0.8, val: 1.0}
+    nostalgic: {hue: 200, sat: 0.6, val: 0.8}

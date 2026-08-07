@@ -7,7 +7,7 @@
 | Version | 1.3 |
 | Author | Youngseok Lee (Dept. of Computer Engineering & Artificial Intelligence, Chungnam National University) |
 | License | Apache License 2.0 |
-| Scope | v1.0 + v1.1 + v1.2 (all blocks) + v1.3 additions (`lyric_map` SRT parsing, radio segmentation profile, `mp3_to_mlml` pipeline) |
+| Scope | v1.0 + v1.1 + v1.2 (all blocks) + v1.3 additions (`lyric_map` SRT parsing, `mp3_to_mlml` pipeline) |
 
 ## Version History
 
@@ -16,7 +16,7 @@
 | v1.0 | 4-layer structure, 16 single-device effects, 12 spatial effects, EIC/SAS/TA |
 | v1.1 | `beat_reactive.on_kick`, `bass_track`, `color_cycle`, KFA/BBC/CCR |
 | v1.2 | `global_mood`, `section_defaults`, `expectation_break`, `bookend`, `lyric_map`, `spotlight`, CS/EBS/LCC |
-| v1.3 | `lyric_map` SRT auto-parsing + 8-category emotion dictionary, `mp3_to_mlml` 4-stage pipeline, radio 3-class segmentation profile, 6 archetypes, LCC metric |
+| v1.3 | `lyric_map` SRT auto-parsing + 8-category emotion dictionary, `mp3_to_mlml` 4-stage pipeline, LCC metric |
 
 ---
 
@@ -75,21 +75,7 @@ metadata:
   duration:  float    # total length (seconds)
   genre:     string   # "k-pop", "ballad", "rock", "r&b"
   mood:      [string] # ["cheerful", "romantic"]
-  archetype: string   # one of 6 KBS acoustic archetypes [v1.3]
 ```
-
-### 2.1 `archetype` Values — 6 KBS Acoustic Archetypes [v1.3]
-
-Automatically estimated by `mp3_to_mlml` from BPM, energy, and danceability.
-
-| Value | Description | Lighting strategy |
-|---|---|---|
-| `BGM_SONG` | Background-music-style song (vocals + instrumental) | Section-contrast-centered, full pipeline |
-| `DRAMA_NARR` | Drama narration (single speaker) | Color-temperature tracking, no beat response |
-| `DRAMA_MULTI` | Drama, multiple speakers (no music) | Speaker-change detection → color transition |
-| `RHYTHM_FAST` | Fast rhythm (high energy) | Strobe, explosion effects |
-| `VO_CALM` | Calm voiceover | Beat response only during background-music segments |
-| `VO_STANDARD` | Standard voiceover (announcer) | Neutral white, minimal response |
 
 ---
 
@@ -462,42 +448,7 @@ python mp3_to_mlml.py song.mp3 --save-analysis   # save the analysis JSON
 
 ---
 
-## 15. Radio 3-Class Segmentation Profile [v1.3]
-
-Classifies radio broadcast audio into three classes — DJ talk / music / advertisement — and applies a distinct MLML profile to each.
-
-### 15.1 Class Definitions and Detection
-
-| Class | Detection method | Signal characteristics | Lighting strategy |
-|---|---|---|---|
-| DJ talk | pyannote speaker detection, high CLAP speech confidence | Voice-dominant, low or no background music | Voice energy → color temperature; no beat response |
-| Music | CLAP genre confidence ≥ 0.85, sustained ≥ 2s | Instrument + vocal dominant | Full MLML pipeline, genre-specific palette + beat |
-| Advertisement | CLAP mismatch detection (extends prior radio research) | Narrator + mixed background music | Neutral white, beat response off |
-
-### 15.2 Multi-Hardware Role Assignment
-
-| Segment | Lightstick (BLE) | LED strip | Hue / smart bulb |
-|---|---|---|---|
-| DJ talk | Off | Kept dim/ambient | Voice energy → color temperature |
-| Music (pop/dance) | Beat + genre response | Spatial effects | Ambient background |
-| Music (ballad) | Gentle response | Slow wave motion | Warm, low brightness |
-| Advertisement | Off | Neutral white | Brightness raised (attention) |
-
-### 15.3 Transition Detection Parameters
-
-```
-CLAP confidence >= 0.85     # confidence threshold
-sustained >= 2 seconds      # prevents flicker/false transitions
-lighting transition fade = 2-5 seconds  # smooth crossfade
-
-# DJ <-> music cross-talk handling
-music energy >= 70%   → remain in music class
-voice energy >= 60%   → remain in DJ class
-```
-
----
-
-## 16. Automatic Evaluation Metrics (9)
+## 15. Automatic Evaluation Metrics (9)
 
 ### 16.1 Tier 1 — Required
 
@@ -527,7 +478,7 @@ voice energy >= 60%   → remain in DJ class
 
 ---
 
-## 17. Complete Example — IU, "I Stan U"
+## 16. Complete Example — IU, "I Stan U"
 
 ```yaml
 metadata:
@@ -536,7 +487,6 @@ metadata:
   bpm: 161.5
   key: G_major
   duration: 247.69
-  archetype: BGM_SONG
 
 global_mood: {temperature: warm, intensity: 0.85, contrast: 0.75}
 
@@ -567,7 +517,7 @@ The full file is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.mlm
 
 ---
 
-## 18. Dependencies & Installation
+## 17. Dependencies & Installation
 
 ```bash
 # Core packages

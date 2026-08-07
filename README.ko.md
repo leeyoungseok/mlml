@@ -81,7 +81,6 @@ metadata:
   artist: "IU"
   bpm: 161.5
   key: G_major
-  archetype: BGM_SONG
 
 timeline:
   - {t: 0.0,  group: 0, color: neutral, effect: breath,        intensity: 0.30}
@@ -113,7 +112,7 @@ timeline:
 | v1.0 | 4계층 구조, 16종 단일 이펙트, 12종 공간 이펙트, EIC/SAS/TA |
 | v1.1 | `beat_reactive.on_kick`, `bass_track`, `color_cycle`, KFA/BBC/CCR |
 | v1.2 | `global_mood`, `section_defaults`, `expectation_break`, `bookend`, `lyric_map`, `spotlight`, CS/EBS/LCC |
-| v1.3 | `lyric_map` SRT 자동 파싱 + 8종 감정 사전, `mp3_to_mlml` 4단계 파이프라인, 라디오 3-class 세그멘테이션 프로파일, archetype 6종, LCC 메트릭 |
+| v1.3 | `lyric_map` SRT 자동 파싱 + 8종 감정 사전, `mp3_to_mlml` 4단계 파이프라인, LCC 메트릭 |
 
 ---
 

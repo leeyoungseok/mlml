@@ -1,8 +1,11 @@
 # 🎵 MLML — Music-to-Light Markup Language
 
-> An open specification for music-synchronized K-pop lightstick choreography
-> 음악의 구조와 감성을 BLE / Wi-Fi / Zigbee 조명 장치의 실시간 색상 제어로 변환하기 위한
-> YAML 기반 선언형 중간 표현 언어 (Spec v1.3)
+[한국어](README.ko.md) | **English**
+
+> An open specification for music-synchronized K-pop lightstick choreography —
+> a YAML-based declarative intermediate representation language for translating
+> music structure and emotion into real-time color control for BLE / Wi-Fi / Zigbee
+> lighting devices (Spec v1.3)
 
 [![ACM Multimedia 2026 - Interactive Art](https://img.shields.io/badge/ACM%20MM%202026-Interactive%20Art%20(Accepted)-purple)](#research)
 [![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/4xf9s3fa-oU)
@@ -25,9 +28,12 @@
 **MLML (Music-to-Light Markup Language)** is a YAML-based open specification that maps
 music structure and emotion to lightstick lighting events — automatically.
 
-- 현재 K-pop 공연장의 응원봉 조명은 기획사 서버가 무선 RF로 일괄 제어합니다.
-- 본 연구는 팬이 집이나 소규모 팬 모임에서 소규모(10-20개 정도)로 직접 조명을 음악과 동기화하는 것을 목표로 합니다.
-- 음악과 동기화되는 조명 시나리오를 만들고 공유할 수 있는 개방형 대안으로 MLML을 제안하고 개발하고 있습니다.
+- Today, K-pop concert lightstick lighting is controlled centrally over wireless RF by the
+  entertainment agency's server.
+- This research aims to let fans synchronize a small number of lightsticks (roughly 10-20)
+  directly with music themselves, at home or at small fan gatherings.
+- We propose and develop MLML as an open alternative for creating and sharing
+  music-synchronized lighting scenarios.
 
 ### Key Features
 
@@ -48,9 +54,9 @@ music structure and emotion to lightstick lighting events — automatically.
 | Rhythmic | `beat_reactive`, `bass_track`, `color_cycle`, `spotlight` | Rhythm response |
 | Semantic | `lyric_map`, `spatial`, `motifs` | Emotion & spatial layout |
 
-전체 블록 명세, 13단계 색상 합산 알고리즘(50fps), 이펙트 28종(단일 16 + 공간 12),
-자동 평가 메트릭 9종(EIC/SAS/TA/KFA/BBC/CCR/CS/EBS/LCC)은 [`SPEC.md`](SPEC.md)에서
-확인할 수 있습니다.
+The full block specification, the 13-step color composition algorithm (50fps), the 28
+effects (16 single-device + 12 spatial), and the 9 automatic evaluation metrics
+(EIC/SAS/TA/KFA/BBC/CCR/CS/EBS/LCC) are documented in [`SPEC.md`](SPEC.md).
 
 ---
 
@@ -58,12 +64,13 @@ music structure and emotion to lightstick lighting events — automatically.
 
 | Artist | Device | Status |
 |--------|--------|--------|
-| IU (아이유) | 유애나봉 | ✅ Analyzed |
-| NMIXX | 공식 응원봉 | ✅ Analyzed |
-| Blackpink | 공식 응원봉 | ✅ Analyzed |
+| IU | Official lightstick | ✅ Analyzed |
+| NMIXX | Official lightstick | ✅ Analyzed |
+| Blackpink | Official lightstick | ✅ Analyzed |
 
-> BLE 역공학 레퍼런스 코드(10종 확장판)는 별도 연구 논문 심사가 완료된 이후
-> 별도 저장소로 공개될 예정입니다.
+> The BLE reverse-engineering reference code (extended, 10-device version) will be
+> released in a separate repository after the companion systems paper has completed
+> peer review.
 
 ---
 
@@ -71,8 +78,8 @@ music structure and emotion to lightstick lighting events — automatically.
 
 ```yaml
 metadata:
-  title: "관객이 될게"
-  artist: "아이유 (IU)"
+  title: "I Stan U"
+  artist: "IU"
   bpm: 161.5
   key: G_major
   archetype: BGM_SONG
@@ -83,8 +90,7 @@ timeline:
   - {t: 48.0, group: 0, color: peak,    effect: release_burst, spatial: explosion}
 ```
 
-전체 예시는 [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml)에서
-볼 수 있습니다.
+The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml).
 
 ---
 
@@ -92,8 +98,8 @@ timeline:
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - 관객이 될게 (I Stan U) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
-| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
+| IU - I Stan U (관객이 될게) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |
@@ -116,7 +122,7 @@ timeline:
 
 This project is part of ongoing research at
 **[Data Networks Lab](https://networks.cnu.ac.kr)**,
-**Chungnam National University, Dept. of Computer Science & AI**
+**Chungnam National University, Dept. of Computer Engineering & Artificial Intelligence**
 
 - 📄 **"MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick
   Choreography"** — accepted, **ACM Multimedia 2026, Interactive Art Track**
@@ -157,7 +163,7 @@ See [`CITATION.cff`](CITATION.cff) for the machine-readable version.
 
 ## Contact & Collaboration
 
-연구 협력, 파트너십 문의:
+For research collaboration or partnership inquiries:
 📧 lee@cnu.ac.kr
 🏫 Data Networks Lab, Chungnam National University
 

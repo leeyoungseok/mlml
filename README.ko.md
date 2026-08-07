@@ -14,11 +14,13 @@
 
 ---
 
-## 데모 — 응원봉 16개 동기화
+## 데모 — 응원봉 12개 동기화 (ACM MM 2026 논문 데모)
 
-[![MLML Demo](https://img.youtube.com/vi/4xf9s3fa-oU/0.jpg)](https://youtu.be/4xf9s3fa-oU)
+[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/0.jpg)](https://youtu.be/cPKkz_UI0TA)
 
-*IU (유애나) 응원봉 16개를 MLML 플레이어로 실시간 동기화 — 수동 제어 없이 동작합니다.*
+*IU "I Stan U" (관객이 될게) 응원봉 12개를 MLML 플레이어로 실시간 동기화한, ACM MM 2026
+Interactive Art 논문에 실린 데모입니다. 더 큰 규모의 응원봉 16개 데모는 아래
+[데모 영상](#데모-영상) 섹션에서 확인할 수 있습니다.*
 
 ---
 
@@ -96,7 +98,7 @@ timeline:
 | 곡 | 응원봉 수 | 링크 |
 |------|-------------|------|
 | IU - 관객이 될게 (I Stan U) — ACM MM 2026 논문 데모 | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
-| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - 관객이 될게 (I Stan U) — 확장 실험 (더 큰 규모) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

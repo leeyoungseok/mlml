@@ -15,11 +15,13 @@
 
 ---
 
-## Demo — 16 Lightsticks Synchronized
+## Demo — 12 Lightsticks Synchronized (ACM MM 2026 Paper Demo)
 
-[![MLML Demo](https://img.youtube.com/vi/4xf9s3fa-oU/0.jpg)](https://youtu.be/4xf9s3fa-oU)
+[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/0.jpg)](https://youtu.be/cPKkz_UI0TA)
 
-*16 IU (유애나) lightsticks synchronized in real-time using the MLML player — no manual control.*
+*12 IU "I Stan U" (관객이 될게) lightsticks synchronized in real-time using the MLML
+player — the demo shown in the ACM MM 2026 Interactive Art paper. A larger-scale
+16-lightstick demo is also available below under [Demo Videos](#demo-videos).*
 
 ---
 
@@ -99,7 +101,7 @@ The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.
 | Song | Lightsticks | Link |
 |------|-------------|------|
 | IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
-| IU - I Stan U (관객이 될게) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - I Stan U (관객이 될게) — larger-scale follow-up | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

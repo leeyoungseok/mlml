@@ -17,7 +17,7 @@
 
 ## Demo — 12 Lightsticks Synchronized (ACM MM 2026 Paper Demo)
 
-[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/0.jpg)](https://youtu.be/cPKkz_UI0TA)
+[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/maxresdefault.jpg)](https://youtu.be/cPKkz_UI0TA)
 
 *12 IU "I Stan U" (관객이 될게) lightsticks synchronized in real-time using the MLML
 player — the demo shown in the ACM MM 2026 Interactive Art paper. A larger-scale

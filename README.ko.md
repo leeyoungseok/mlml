@@ -68,7 +68,7 @@ Interactive Art 논문에 실린 데모입니다. 더 큰 규모의 응원봉 16
 | NMIXX | 공식 응원봉 | ✅ 분석 완료 |
 | Blackpink | 공식 응원봉 | ✅ 분석 완료 |
 
-> BLE 역공학 레퍼런스 코드(10종 확장판)는 별도 연구 논문 심사가 완료된 이후
+> BLE 역공학 레퍼런스 코드는 별도 연구 논문 심사가 완료된 이후
 > 별도 저장소로 공개될 예정입니다.
 
 ---
@@ -145,7 +145,7 @@ timeline:
 
 ## 로드맵
 
-- [x] BLE 프로토콜 분석 (IU, Blackpink, SEVENTEEN, NMIXX)
+- [x] BLE 프로토콜 분석 (IU, Blackpink, NMIXX)
 - [x] MLML v1.3 명세
 - [x] 실시간 플레이어 (응원봉 16개)
 - [x] LLM 기반 시나리오 생성

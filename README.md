@@ -70,7 +70,7 @@ effects (16 single-device + 12 spatial), and the 9 automatic evaluation metrics
 | NMIXX | Official lightstick | ✅ Analyzed |
 | Blackpink | Official lightstick | ✅ Analyzed |
 
-> The BLE reverse-engineering reference code (extended, 10-device version) will be
+> The BLE reverse-engineering reference code will be
 > released in a separate repository after the companion systems paper has completed
 > peer review.
 
@@ -149,7 +149,7 @@ See [`CITATION.cff`](CITATION.cff) for the machine-readable version.
 
 ## Roadmap
 
-- [x] BLE protocol analysis (IU, Blackpink, SEVENTEEN, NMIXX)
+- [x] BLE protocol analysis (IU, Blackpink, NMIXX)
 - [x] MLML v1.3 specification
 - [x] Real-time player (16 lightsticks)
 - [x] LLM-based scenario generation

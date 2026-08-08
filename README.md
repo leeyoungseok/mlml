@@ -99,8 +99,9 @@ The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) | 
+| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) |
 | Bigbang - Sunset — | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA?si=mWaGRMofdggECByb ) | 
+| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

@@ -8,7 +8,7 @@
 > lighting devices (Spec v1.3)
 
 [![ACM Multimedia 2026 - Interactive Art](https://img.shields.io/badge/ACM%20MM%202026-Interactive%20Art%20(Accepted)-purple)](#research)
-[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH)
+[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/pWpbqh3mh3M) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **Data Networks Lab, Chungnam National University** · [networks.cnu.ac.kr](https://networks.cnu.ac.kr)

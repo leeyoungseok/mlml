@@ -8,7 +8,7 @@
 > lighting devices (Spec v1.3)
 
 [![ACM Multimedia 2026 - Interactive Art](https://img.shields.io/badge/ACM%20MM%202026-Interactive%20Art%20(Accepted)-purple)](#research)
-[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/pWpbqh3mh3M) 
+[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/a4oUMooHqgo)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **Data Networks Lab, Chungnam National University** · [networks.cnu.ac.kr](https://networks.cnu.ac.kr)
@@ -100,7 +100,7 @@ The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.
 | Song | Lightsticks | Link |
 |------|-------------|------|
 | IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) | 
-| IU - I Stan U (관객이 될게) — larger-scale follow-up | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| Bigbang - Sunset — | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA?si=mWaGRMofdggECByb ) | 
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

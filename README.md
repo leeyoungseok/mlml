@@ -8,7 +8,7 @@
 > lighting devices (Spec v1.3)
 
 [![ACM Multimedia 2026 - Interactive Art](https://img.shields.io/badge/ACM%20MM%202026-Interactive%20Art%20(Accepted)-purple)](#research)
-[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/4xf9s3fa-oU)
+[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **Data Networks Lab, Chungnam National University** · [networks.cnu.ac.kr](https://networks.cnu.ac.kr)
@@ -17,7 +17,7 @@
 
 ## Demo — 12 Lightsticks Synchronized (ACM MM 2026 Paper Demo)
 
-[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/maxresdefault.jpg)](https://youtu.be/cPKkz_UI0TA)
+[![MLML Demo](https://img.youtube.com/vi/cPKkz_UI0TA/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH)
 
 *12 IU "I Stan U" (관객이 될게) lightsticks synchronized in real-time using the MLML
 player — the demo shown in the ACM MM 2026 Interactive Art paper. A larger-scale
@@ -99,7 +99,7 @@ The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
+| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) | 
 | IU - I Stan U (관객이 될게) — larger-scale follow-up | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |

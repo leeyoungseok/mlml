@@ -17,7 +17,7 @@
 
 ## Demo — 12 Lightsticks Synchronized (ACM MM 2026 Paper Demo)
 
-[![MLML Demo](https://img.youtube.com/vi/a4oUMooHqgo/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH)
+[![MLML Demo](https://i.ytimg.com/vi/a4oUMooHqgo/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo)
 
 *12 IU "I Stan U" (관객이 될게) lightsticks synchronized in real-time using the MLML
 player — the demo shown in the ACM MM 2026 Interactive Art paper. A larger-scale
@@ -80,18 +80,33 @@ effects (16 single-device + 12 spatial), and the 9 automatic evaluation metrics
 
 ```yaml
 metadata:
-  title: "I Stan U"
-  artist: "IU"
+  title: I Stan U
+  artist: IU
   bpm: 161.5
   key: G_major
 
 timeline:
-  - {t: 0.0,  group: 0, color: neutral, effect: breath,        intensity: 0.30}
-  - {t: 47.5, group: 0, color: null,    effect: expectation_break}
-  - {t: 48.0, group: 0, color: peak,    effect: release_burst, spatial: explosion}
+- {t: 0.0,   group: 0, color: neutral,   effect: breath,            intensity: 0.32, period: 4.0, note: intro #1}
+- {t: 8.99,  group: 0, color: peak,      effect: flash_all,         intensity: 0.65, note: energy surge}
+- {t: 12.14, group: 0, color: secondary, effect: tension_build,     intensity: 0.96, note: prechorus #1}
+- {t: 23.92, group: 0, color: null,      effect: expectation_break, intensity: 0.0,  note: blackout (end of pre-chorus)}
 ```
 
-The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml).
+Every event carries a `note` field recording *why* the compiler placed it — the section
+label, the detected kick strength, or the energy transition that triggered it. Authorial
+intent stays legible in the artifact itself.
+
+The full example is at [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml): **135 timeline
+events** covering 23 of the 28 effects, compiled from a 247.7 s track.
+
+```bash
+# Reproduce the example (LLM refinement disabled for determinism)
+python mp3_to_mlml.py istanu.mp3 --no-llm
+```
+
+> Only `metadata.title` / `artist` / `genre` were corrected by hand; everything else is
+> compiler output. Generated scripts contain no lyrics — `lyric_map` carries emotion
+> labels and timings only.
 
 ---
 
@@ -99,9 +114,9 @@ The full example is available at [`examples/iu_istanu.mlml`](examples/iu_istanu.
 
 | Song | Lightsticks | Link |
 |------|-------------|------|
-| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) |
-| Bigbang - Sunset — | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA?si=mWaGRMofdggECByb ) | 
-| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo) |
+| Bigbang - Sunset | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
+| IU - I Stan U (관객이 될게) — larger-scale follow-up | 16 | [▶ YouTube](https://youtu.be/4xf9s3fa-oU) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

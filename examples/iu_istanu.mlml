@@ -1,67 +1,124 @@
 metadata:
-  title: 관객이 될께
-  artist: 아이유 (IU)
+  title: I Stan U
+  artist: IU
   bpm: 161.5
   key: G_major
-  time_sig: "4/4"
+  time_sig: 4/4
   duration: 247.69
   genre: k-pop
-  mood: [cheerful, romantic, energetic]
-
+  mood:
+  - cheerful
+  - romantic
+  archetype: BGM_SONG
+  analysis_meta:
+    bpm_confidence: 0.0
+    kfa: 0.553
+    has_stems: true
+    n_beats: 652
+    n_downbeats: 163
+    n_kicks: 360
+    chroma_entropy: 2.445
+    dynamic_range: 8.92
+    danceability: 0.412
 palette:
   primary:
     hue: 210
-    sat: 0.7
-    val: 0.9
+    sat: 0.89
+    val: 0.92
   secondary:
-    hue: 40
-    sat: 0.8
-    val: 1.0
-  warm:
-    hue: 15
-    sat: 0.9
-    val: 1.0
-  cool:
-    hue: 240
-    sat: 0.6
-    val: 0.8
-  peak:
     hue: 0
+    sat: 0.94
+    val: 1.0
+  peak:
+    hue: 30
     sat: 1.0
     val: 1.0
   neutral:
-    hue: 200
-    sat: 0.2
+    hue: 210
+    sat: 0.15
     val: 0.4
   white:
     hue: 0
     sat: 0.0
     val: 1.0
+  warm:
+    hue: 18
+    sat: 0.92
+    val: 1.0
+  cool:
+    hue: 330
+    sat: 0.65
+    val: 0.82
   love:
     hue: 350
     sat: 0.9
     val: 1.0
   happy:
     hue: 45
-    sat: 0.9
+    sat: 0.92
     val: 1.0
-  rose:
+  sad:
+    hue: 220
+    sat: 0.65
+    val: 0.65
+  hope:
+    hue: 175
+    sat: 0.55
+    val: 0.9
+  dreamy:
+    hue: 280
+    sat: 0.6
+    val: 0.85
+  powerful:
+    hue: 15
+    sat: 1.0
+    val: 1.0
+  complement:
+    hue: 30
+    sat: 0.89
+    val: 0.97
+  triad_a:
     hue: 330
+    sat: 0.84
+    val: 0.92
+  triad_b:
+    hue: 90
+    sat: 0.84
+    val: 0.92
+  analog_a:
+    hue: 240
+    sat: 0.89
+    val: 0.92
+  analog_b:
+    hue: 180
+    sat: 0.89
+    val: 0.92
+  gold:
+    hue: 42
+    sat: 1.0
+    val: 1.0
+  neon:
+    hue: 120
+    sat: 1.0
+    val: 1.0
+  purple:
+    hue: 280
     sat: 0.85
     val: 0.95
-
+  teal:
+    hue: 175
+    sat: 0.9
+    val: 0.9
 global_mood:
   temperature: warm
-  intensity: 0.85
-  contrast: 0.75
-
+  intensity: 0.91
+  contrast: 0.66
 tempo_mode:
   auto: true
   override:
     bars_per_change: 2
-    smooth: 0.05
+    smooth: 0.04
     hz_hi: 20
-
 motifs:
   heart_pulse:
     type: blink
@@ -70,397 +127,1208 @@ motifs:
     attack: fast
     decay: slow
     color: primary
-
   tension_build:
     type: brightness_ramp
     curve: exponential
     color_shift: toward_peak
     blink_accelerate: true
-
   release_burst:
     type: flash_all
     color: peak
     duration: 0.1
     then: fade_to_primary
-
   breath:
     type: brightness_sine
     period: 4.0
-    min_val: 0.2
-    max_val: 0.8
+    min_val: 0.15
+    max_val: 0.85
     color: neutral
-
+  slow_pulse:
+    type: brightness_sine
+    period: 2.0
+    min_val: 0.2
+    max_val: 0.75
+    color: primary
   expectation_break:
     type: blackout_then_burst
     blackout_duration: 0.5
     blackout_beats: 1
     burst_color: peak
-
-  spotlight_fade:
-    type: single_focus
-    brightness: 0.6
-    sat_reduce: 0.4
-
-  love_wave:
-    type: spatial_wave
-    direction: lr
+  rainbow:
+    type: hue_sweep
     speed: 1.0
-    color: love
-
+    sat: 1.0
+    val: 1.0
+  sparkle:
+    type: random_flash
+    density: 0.3
+    color: white
+    duration: 0.05
+  chase:
+    type: sequential_on
+    direction: forward
+    color: primary
+    trail: 3
+  twinkle:
+    type: random_dim
+    density: 0.4
+    period: 2.0
+    color: cool
+  shimmer:
+    type: shimmer
+    density: 0.4
+    color_spread: 60
+    color: dreamy
+  wave_lr:
+    type: spatial_wave
+    axis: horizontal
+    delay_per_col: 0.05
+    color: primary
+  wave_rl:
+    type: spatial_wave
+    axis: horizontal
+    delay_per_col: -0.05
+    color: secondary
+  color_wipe:
+    type: fill_sweep
+    direction: left_to_right
+    color: secondary
+    duration_beats: 2
+  bounce:
+    type: ping_pong
+    axis: vertical
+    color: peak
+    speed_mult: 1.5
+  beat_flash:
+    type: flash_all
+    duration: 0.04
+    color: white
+    decay: instant
+  ripple:
+    type: ripple
+    origin: center
+    speed: 1.2
+    color: primary
+  color_sweep:
+    type: hue_rotate
+    speed: 0.5
+    sat: 0.9
+    val: 1.0
+  fast_strobe:
+    type: strobe
+    duty: 0.5
+    color: white
+  dim_glow:
+    type: brightness_sine
+    period: 6.0
+    min_val: 0.1
+    max_val: 0.55
+    color: neutral
+  double_blink:
+    type: blink_twice
+    duty: 0.25
+    attack: instant
+    decay: fast
 beat_reactive:
   on_kick:
     color: white
-    duration: 0.04
-    strength: 0.98
+    duration: 0.035
+    strength: 0.61
   on_snare:
     color: secondary
     duration: 0.05
-    strength: 0.5
-
+    strength: 0.32
+  on_hi:
+    color: teal
+    duration: 0.02
+    strength: 0.1
 bass_track:
   follow: true
-  smooth: 0.1
+  smooth: 0.05
   freq_max: 200
   min_val: 0.3
   max_val: 1.0
-
+  source: demucs_bass
+color_cycle:
+  unit: downbeat
+  bars_per_change: 2
+  colors:
+  - primary
+  - secondary
+  - complement
+  - triad_a
+  transition: 0.3
 spatial:
   layout: arena
-  dimensions: {rows: 4, cols: 5}
+  dimensions:
+    rows: 4
+    cols: 5
   groups:
-    left_half:  {cols: [0, 1]}
-    right_half: {cols: [3, 4]}
-    front_row:  {rows: [0]}
-    back_row:   {rows: [3]}
-    center:     {rows: [1, 2], cols: [2]}
-  wave_origin: {row: 0, col: 0}
-  explosion_center: {row: 1.5, col: 2}
+    left_half:
+      cols:
+      - 0
+      - 1
+    right_half:
+      cols:
+      - 3
+      - 4
+    front_row:
+      rows:
+      - 0
+    back_row:
+      rows:
+      - 3
+    center:
+      rows:
+      - 1
+      - 2
+      cols:
+      - 2
+    diagonal_a:
+      cells:
+      - - 0
+        - 0
+      - - 1
+        - 1
+      - - 2
+        - 2
+      - - 3
+        - 3
+    diagonal_b:
+      cells:
+      - - 0
+        - 4
+      - - 1
+        - 3
+      - - 2
+        - 2
+      - - 3
+        - 1
+  wave_origin:
+    row: 0
+    col: 0
+  explosion_center:
+    row: 1.5
+    col: 2
   delay_per_col: 0.05
   delay_per_row: 0.05
   delay_per_unit: 0.03
-
 section_defaults:
   intro:
     effect: breath
     color: neutral
-    intensity: 0.4
+    intensity: 0.3
   verse:
     effect: heart_pulse
-    color: primary
-    intensity: 0.65
+    color: warm
+    intensity: 0.6
     spotlight: true
   prechorus:
     effect: tension_build
     color: secondary
-    intensity: 0.8
+    intensity: 0.82
     expectation_break: true
   chorus:
     effect: release_burst
     color: peak
     intensity: 1.0
     spatial: explosion
+  climax:
+    effect: release_burst
+    color: peak
+    intensity: 1.0
+    spatial: explosion
   bridge:
-    effect: spotlight_fade
-    color: cool
-    intensity: 0.55
-  outro:
-    effect: breath
-    color: love
-    intensity: 0.35
-
-timeline:
-  # ── 인트로 (0~8s) ──────────────────────────
-  - t: 0.0
-    group: 0
-    color: neutral
-    effect: breath
-    intensity: 0.3
-    note: "인트로 시작 — 조용히 숨쉬기"
-
-  - t: 4.0
-    group: 0
-    color: primary
-    effect: slow_pulse
-    intensity: 0.45
-    note: "인트로 후반 — 기대감 상승"
-
-  # ── 버스 1 (8~48s) ──────────────────────────
-  - t: 8.0
-    group: 0
-    color: primary
-    effect: heart_pulse
-    bpm_sync: true
-    intensity: 0.6
-    note: "버스 1 시작 — 심장박동"
-
-  - t: 8.0
-    group: 1
-    spotlight: true
-    bg_brightness: 0.15
-    note: "스포트라이트 — 보컬 포커스"
-
-  - t: 24.0
-    group: 0
-    color: secondary
-    effect: color_sweep
-    intensity: 0.55
-    note: "브릿지 구간 — 색상 변화"
-
-  - t: 36.0
-    group: 0
-    color: primary
-    effect: heart_pulse
-    bpm_sync: true
-    intensity: 0.65
-    note: "버스 재개"
-
-  # ── 프리코러스 1 (44~48s) ──────────────────
-  - t: 44.0
-    group: 0
-    color: secondary
-    effect: tension_build
-    intensity: 0.8
-    note: "프리코러스 — 긴장감 상승"
-
-  - t: 47.5
-    group: 0
-    color: null
-    effect: expectation_break
-    note: "암전 — 코러스 직전 1박"
-
-  # ── 코러스 1 (48~72s) ──────────────────────
-  - t: 48.0
-    group: 0
-    color: peak
-    effect: release_burst
-    intensity: 1.0
-    spatial: explosion
-    note: "🔥 코러스 폭발!"
-
-  - t: 50.0
-    group: 0
-    color: love
-    effect: fast_strobe
-    bpm_sync: true
-    hz: 12.0
-    intensity: 0.95
-    note: "코러스 — 고속 스트로브"
-
-  - t: 56.0
-    group: 1
-    color: peak
-    effect: wave_lr
-    intensity: 1.0
-    note: "섹션 분리 웨이브"
-
-  - t: 56.0
-    group: 2
-    color: love
-    effect: wave_lr
-    intensity: 0.9
-    note: "반대편 섹션 웨이브"
-
-  - t: 60.0
-    group: 0
-    color: rose
-    effect: color_sweep
-    intensity: 0.9
-    note: "코러스 후반 — 로즈 색상"
-
-  # ── 버스 2 (72~100s) ──────────────────────
-  - t: 72.0
-    group: 0
-    color: primary
-    effect: heart_pulse
-    bpm_sync: true
-    intensity: 0.65
-    note: "버스 2"
-
-  - t: 80.0
-    group: 1
-    color: warm
-    effect: spotlight_fade
-    intensity: 0.6
-    note: "섹션 1 스포트라이트"
-
-  - t: 88.0
-    group: 2
-    color: cool
-    effect: spotlight_fade
-    intensity: 0.6
-    note: "섹션 2 스포트라이트"
-
-  - t: 96.0
-    group: 0
-    color: secondary
-    effect: tension_build
-    intensity: 0.85
-    note: "두 번째 코러스 직전 긴장"
-
-  # ── 코러스 2 (100~128s) ────────────────────
-  - t: 100.0
-    group: 0
-    color: peak
-    effect: release_burst
-    intensity: 1.0
-    spatial: explosion
-    note: "🔥 코러스 2 폭발!"
-
-  - t: 104.0
-    group: 0
-    color: love
-    effect: rainbow
-    intensity: 1.0
-    note: "무지개 — 최고 에너지"
-
-  - t: 108.0
-    group: 0
-    color: peak
-    effect: fast_strobe
-    bpm_sync: true
-    hz: 15.0
-    intensity: 1.0
-    note: "고속 스트로브 강화"
-
-  - t: 112.0
-    group: 1
-    color: warm
-    effect: call_and_response
-    note: "좌우 교대 응원"
-
-  - t: 112.0
-    group: 2
-    color: cool
-    effect: call_and_response
-    note: "좌우 교대 응원 반대편"
-
-  # ── 브릿지 (156~164s) ──────────────────────
-  - t: 156.0
-    group: 0
-    color: cool
-    effect: dim_glow
-    val: 0.25
-    intensity: 0.4
-    note: "브릿지 — 차분하게 낮춤"
-
-  - t: 160.0
-    group: 1
-    color: love
-    effect: breath
-    period: 4.0
-    intensity: 0.45
-    note: "브릿지 섹션 1 — 숨쉬기"
-
-  # ── 클라이맥스 진입 (164~168s) ────────────
-  - t: 164.0
-    group: 0
-    color: secondary
-    effect: tension_build
-    intensity: 0.9
-    note: "클라이맥스 직전 최대 긴장"
-
-  - t: 167.5
-    group: 0
-    color: null
-    effect: expectation_break
-    note: "마지막 암전"
-
-  # ── 최종 코러스 (168~208s) ─────────────────
-  - t: 168.0
-    group: 0
-    color: peak
-    effect: release_burst
-    intensity: 1.0
-    spatial: explosion
-    note: "🔥🔥 최종 코러스 최대 폭발!"
-
-  - t: 170.0
-    group: 0
-    color: love
-    effect: fast_strobe
-    bpm_sync: true
-    hz: 18.0
-    intensity: 1.0
-    note: "최대 스트로브"
-
-  - t: 176.0
-    group: 0
-    color: rose
-    effect: rainbow
-    intensity: 1.0
-    note: "무지개 최대 밝기"
-
-  - t: 184.0
-    group: 0
-    color: peak
-    effect: release_burst
-    intensity: 1.0
-    spatial: diagonal_wave
-    note: "대각선 웨이브"
-
-  - t: 192.0
-    group: 1
-    color: love
-    effect: wave_lr
-    note: "섹션 웨이브 좌→우"
-
-  - t: 192.0
-    group: 2
-    color: warm
-    effect: wave_lr
-    note: "섹션 웨이브 동시"
-
-  - t: 196.0
-    group: 0
-    color: rose
-    effect: color_sweep
-    intensity: 0.95
-    note: "마지막 색상 쓸기"
-
-  # ── 아웃트로 (208~247.69s) ─────────────────
-  - t: 208.0
-    group: 0
-    color: love
-    effect: breath
-    period: 6.0
+    effect: twinkle
+    color: dreamy
     intensity: 0.5
-    note: "아웃트로 시작 — 서서히 꺼짐"
-
-  - t: 220.0
-    group: 0
-    color: rose
-    effect: fade_inout
-    curve: logarithmic
-    intensity: 0.35
-    note: "페이드아웃"
-
-  - t: 235.0
-    group: 0
+  outro:
+    effect: slow_pulse
     color: love
-    effect: breath
-    period: 8.0
-    intensity: 0.2
-    note: "마지막 숨쉬기"
-
-  - t: 245.0
-    group: 0
-    color: neutral
-    effect: fade_inout
-    curve: logarithmic
-    intensity: 0.1
-    note: "완전 암전"
-
+    intensity: 0.32
+global_arc:
+  tension_curve:
+  - - 0.0
+    - 0.3
+  - - 12.14
+    - 0.8
+  - - 24.29
+    - 0.62
+  - - 36.52
+    - 0.91
+  - - 48.6
+    - 0.95
+  - - 60.77
+    - 0.98
+  - - 72.91
+    - 0.8
+  - - 85.05
+    - 0.76
+  - - 97.18
+    - 0.84
+  - - 109.37
+    - 0.96
+  - - 121.53
+    - 0.91
+  - - 133.65
+    - 1.0
+  - - 145.8
+    - 0.98
+  - - 157.83
+    - 0.64
+  - - 169.71
+    - 0.94
+  - - 181.86
+    - 0.94
+  - - 194.05
+    - 0.57
+  - - 205.96
+    - 0.58
+  - - 218.01
+    - 0.74
+  - - 230.18
+    - 0.35
+  - - 242.32
+    - 0.35
+  tension_rules:
+  - above: 0.8
+    apply: tension_build
+  - below: 0.25
+    apply: breath
+timeline:
+- t: 0.0
+  group: 0
+  color: neutral
+  effect: breath
+  intensity: 0.32
+  note: 'intro #1'
+  period: 4.0
+- t: 8.99
+  group: 0
+  color: peak
+  effect: flash_all
+  intensity: 0.65
+  note: energy surge
+- t: 12.14
+  group: 0
+  color: secondary
+  effect: tension_build
+  intensity: 0.9632
+  note: 'prechorus #1'
+- t: 13.56
+  group: 0
+  color: peak
+  effect: flash_all
+  intensity: 0.65
+  note: energy surge
+- t: 14.91
+  group: 0
+  color: peak
+  effect: flash_all
+  intensity: 0.65
+  note: energy surge
+- t: 18.22
+  group: 1
+  color: peak
+  effect: chase
+  intensity: 0.8
+  note: pre mid (chase)
+- t: 19.41
+  group: 0
+  color: peak
+  effect: flash_all
+  intensity: 0.65
+  note: energy surge
+- t: 23.15
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.82
+  note: kick (pre build 0.82)
+- t: 23.92
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 24.08
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.88
+  note: kick (pre build 0.88)
+- t: 24.29
+  group: 0
+  color: dreamy
+  effect: dim_glow
+  intensity: 0.5
+  note: 'bridge #1'
+- t: 30.4
+  group: 1
+  color: cool
+  effect: twinkle
+  intensity: 0.45
+  note: bridge mid (twinkle)
+- t: 36.52
+  group: 0
+  color: warm
+  effect: chase
+  intensity: 1.0
+  note: 'prechorus #2'
+- t: 42.56
+  group: 1
+  color: peak
+  effect: ripple
+  intensity: 0.8
+  note: pre mid (ripple)
+- t: 44.03
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.57
+  note: kick (pre build 0.57)
+- t: 46.49
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.75
+  note: kick (pre build 0.75)
+- t: 47.07
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.79
+  note: kick (pre build 0.79)
+- t: 48.23
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 48.6
+  group: 0
+  color: peak
+  effect: release_burst
+  intensity: 1.0
+  note: 'chorus #1'
+  spatial: explosion
+- t: 48.76
+  group: 3
+  color: primary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 51.64
+  group: 0
+  color: primary
+  effect: rainbow
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (rainbow)
+- t: 52.94
+  group: 3
+  color: secondary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 53.52
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 54.68
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 54.68
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 54.68
+  group: 3
+  color: warm
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 55.05
+  group: 3
+  color: cool
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 56.19
+  group: 3
+  color: love
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 57.73
+  group: 0
+  color: white
+  effect: sparkle
+  intensity: 0.82
+  note: tail (sparkle)
+- t: 59.21
+  group: 3
+  color: happy
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 60.77
+  group: 0
+  color: love
+  effect: release_burst
+  intensity: 1.0
+  note: 'chorus #2'
+  spatial: explosion
+- t: 62.18
+  group: 3
+  color: love
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 63.8
+  group: 0
+  color: secondary
+  effect: color_wipe
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (color_wipe)
+- t: 66.84
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 66.84
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 67.01
+  group: 3
+  color: happy
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 67.2
+  group: 3
+  color: hope
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 69.88
+  group: 0
+  color: cool
+  effect: ripple
+  intensity: 0.82
+  note: tail (ripple)
+- t: 70.24
+  group: 3
+  color: dreamy
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 70.82
+  group: 3
+  color: powerful
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 71.35
+  group: 3
+  color: complement
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 72.7
+  group: 3
+  color: triad_a
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 72.91
+  group: 0
+  color: peak
+  effect: bounce
+  intensity: 0.9632
+  note: 'prechorus #3'
+- t: 78.98
+  group: 1
+  color: peak
+  effect: color_sweep
+  intensity: 0.8
+  note: pre mid (color_sweep)
+- t: 80.48
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.57
+  note: kick (pre build 0.57)
+- t: 83.52
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.79
+  note: kick (pre build 0.79)
+- t: 84.68
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 85.05
+  group: 0
+  color: secondary
+  effect: color_sweep
+  intensity: 0.9296
+  note: 'prechorus #4'
+- t: 91.12
+  group: 1
+  color: peak
+  effect: chase
+  intensity: 0.8
+  note: pre mid (chase)
+- t: 96.81
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 97.18
+  group: 0
+  color: warm
+  effect: tension_build
+  intensity: 0.9968
+  note: 'prechorus #5'
+- t: 103.28
+  group: 1
+  color: peak
+  effect: chase
+  intensity: 0.8
+  note: pre mid (chase)
+- t: 106.14
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.67
+  note: kick (pre build 0.67)
+- t: 108.41
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.83
+  note: kick (pre build 0.83)
+- t: 109.0
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 109.37
+  group: 0
+  color: triad_a
+  effect: release_burst
+  intensity: 1.0
+  note: 'chorus #3'
+  spatial: explosion
+- t: 109.55
+  group: 3
+  color: complement
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 110.85
+  group: 3
+  color: triad_a
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 111.43
+  group: 3
+  color: triad_b
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 112.41
+  group: 0
+  color: peak
+  effect: bounce
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (bounce)
+- t: 113.34
+  group: 3
+  color: analog_a
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 113.89
+  group: 3
+  color: analog_b
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 115.45
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 115.45
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 118.49
+  group: 0
+  color: white
+  effect: sparkle
+  intensity: 0.82
+  note: tail (sparkle)
+- t: 120.35
+  group: 3
+  color: gold
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 121.51
+  group: 3
+  color: neon
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 121.53
+  group: 0
+  color: peak
+  effect: chase
+  intensity: 1.0
+  note: 'prechorus #6'
+- t: 127.59
+  group: 1
+  color: peak
+  effect: ripple
+  intensity: 0.8
+  note: pre mid (ripple)
+- t: 129.01
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.57
+  note: kick (pre build 0.57)
+- t: 130.98
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.71
+  note: kick (pre build 0.71)
+- t: 132.68
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.83
+  note: kick (pre build 0.83)
+- t: 133.07
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.86
+  note: kick (pre build 0.86)
+- t: 133.28
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 133.65
+  group: 0
+  color: complement
+  effect: release_burst
+  intensity: 1.0
+  note: 'chorus #4'
+  spatial: explosion
+- t: 135.74
+  group: 3
+  color: gold
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 136.69
+  group: 0
+  color: warm
+  effect: sparkle
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (sparkle)
+- t: 136.88
+  group: 3
+  color: neon
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 137.25
+  group: 3
+  color: purple
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 138.18
+  group: 3
+  color: teal
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 138.76
+  group: 3
+  color: primary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 139.73
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 139.73
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 140.09
+  group: 3
+  color: secondary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 140.39
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 142.76
+  group: 0
+  color: cool
+  effect: ripple
+  intensity: 0.82
+  note: tail (ripple)
+- t: 144.66
+  group: 3
+  color: warm
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 145.77
+  group: 3
+  color: cool
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.78
+  note: kick (chorus)
+- t: 145.8
+  group: 0
+  color: peak
+  effect: release_burst
+  intensity: 1.0
+  note: 'climax #1'
+  spatial: explosion
+- t: 146.19
+  group: 3
+  color: primary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 147.68
+  group: 3
+  color: secondary
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 148.81
+  group: 0
+  color: primary
+  effect: color_wipe
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (color_wipe)
+- t: 149.21
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 149.79
+  group: 3
+  color: warm
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 151.82
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 151.82
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 154.82
+  group: 0
+  color: white
+  effect: sparkle
+  intensity: 0.82
+  note: tail (sparkle)
+- t: 157.09
+  group: 0
+  color: gold
+  effect: flash_all
+  intensity: 1.0
+  note: climax final flash
+- t: 157.83
+  group: 0
+  color: warm
+  effect: heart_pulse
+  intensity: 0.58
+  note: 'verse #1'
+  bpm_sync: true
+- t: 158.2
+  group: 1
+  spotlight: true
+  bg_brightness: 0.1
+  color: white
+  note: vocal spotlight
+- t: 159.27
+  group: 2
+  color: warm
+  effect: double_blink
+  intensity: 0.5
+  note: downbeat
+- t: 160.75
+  group: 2
+  color: warm
+  effect: double_blink
+  intensity: 0.5
+  note: downbeat
+- t: 169.34
+  group: 3
+  color: white
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.65
+  note: kick (verse)
+- t: 169.71
+  group: 0
+  color: love
+  effect: release_burst
+  intensity: 1.0
+  note: 'climax #2'
+  spatial: explosion
+- t: 172.75
+  group: 0
+  color: secondary
+  effect: flash_all
+  bpm_sync: true
+  intensity: 0.92
+  note: mid (flash_all)
+- t: 172.97
+  group: 3
+  color: love
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 173.82
+  group: 3
+  color: happy
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 174.1
+  group: 3
+  color: hope
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 175.03
+  group: 3
+  color: dreamy
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 175.79
+  group: 1
+  color: complement
+  effect: wave_lr
+  intensity: 1.0
+  note: wave L→R
+- t: 175.79
+  group: 2
+  color: triad_a
+  effect: wave_rl
+  intensity: 0.88
+  note: wave R→L
+- t: 176.84
+  group: 3
+  color: powerful
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 177.68
+  group: 3
+  color: complement
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 178.82
+  group: 0
+  color: cool
+  effect: ripple
+  intensity: 0.82
+  note: tail (ripple)
+- t: 179.0
+  group: 3
+  color: triad_a
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 180.63
+  group: 3
+  color: triad_b
+  effect: beat_flash
+  duration: 0.05
+  intensity: 0.88
+  note: kick (climax)
+- t: 181.12
+  group: 0
+  color: gold
+  effect: flash_all
+  intensity: 1.0
+  note: climax final flash
+- t: 181.86
+  group: 0
+  color: secondary
+  effect: bounce
+  intensity: 1.0
+  note: 'prechorus #7'
+- t: 187.96
+  group: 1
+  color: peak
+  effect: color_sweep
+  intensity: 0.8
+  note: pre mid (color_sweep)
+- t: 189.85
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.6
+  note: kick (pre build 0.60)
+- t: 191.54
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.72
+  note: kick (pre build 0.72)
+- t: 192.77
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.81
+  note: kick (pre build 0.81)
+- t: 193.68
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 194.05
+  group: 0
+  color: dreamy
+  effect: twinkle
+  intensity: 0.5
+  note: 'bridge #2'
+- t: 200.0
+  group: 1
+  color: cool
+  effect: shimmer
+  intensity: 0.45
+  note: bridge mid (shimmer)
+- t: 205.96
+  group: 0
+  color: dreamy
+  effect: fade_inout
+  intensity: 0.5
+  note: 'bridge #3'
+- t: 211.98
+  group: 1
+  color: cool
+  effect: twinkle
+  intensity: 0.45
+  note: bridge mid (twinkle)
+- t: 218.01
+  group: 0
+  color: warm
+  effect: color_sweep
+  intensity: 0.9184
+  note: 'prechorus #8'
+- t: 224.1
+  group: 1
+  color: peak
+  effect: chase
+  intensity: 0.8
+  note: pre mid (chase)
+- t: 226.95
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.67
+  note: kick (pre build 0.67)
+- t: 228.07
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.75
+  note: kick (pre build 0.75)
+- t: 228.83
+  group: 3
+  color: peak
+  effect: beat_flash
+  duration: 0.04
+  intensity: 0.8
+  note: kick (pre build 0.80)
+- t: 229.81
+  group: 0
+  color: null
+  effect: expectation_break
+  intensity: 0.0
+  note: blackout (end of pre-chorus)
+- t: 230.18
+  group: 0
+  color: love
+  effect: slow_pulse
+  intensity: 0.38
+  note: 'outro #1'
+  period: 6.0
+- t: 242.32
+  group: 0
+  color: warm
+  effect: breath
+  intensity: 0.38
+  note: 'outro #2'
+  period: 6.0
 bookend:
-  fade_out_start: 240.0
-  fade_out_duration: 7.69
+  fade_out_start: 237.7
+  fade_out_duration: 10.0
   final_color: love
-
 lyric_map:
   enabled: true
-  source: whisper
+  source: srt
   emotion_color:
-    love:      {hue: 350, sat: 0.9, val: 1.0}
-    happy:     {hue: 45,  sat: 0.9, val: 1.0}
-    romantic:  {hue: 330, sat: 0.85, val: 0.95}
-    cheerful:  {hue: 60,  sat: 0.8, val: 1.0}
-    nostalgic: {hue: 200, sat: 0.6, val: 0.8}
+    love:
+      hue: 350
+      sat: 0.9
+      val: 1.0
+    happy:
+      hue: 45
+      sat: 0.9
+      val: 1.0
+    romantic:
+      hue: 330
+      sat: 0.85
+      val: 0.95
+    sad:
+      hue: 220
+      sat: 0.7
+      val: 0.7
+    hope:
+      hue: 180
+      sat: 0.55
+      val: 0.9
+    nostalgic:
+      hue: 30
+      sat: 0.7
+      val: 0.8
+    excited:
+      hue: 0
+      sat: 1.0
+      val: 1.0
+    calm:
+      hue: 200
+      sat: 0.4
+      val: 0.75
+    powerful:
+      hue: 15
+      sat: 1.0
+      val: 1.0
+    dreamy:
+      hue: 280
+      sat: 0.6
+      val: 0.85

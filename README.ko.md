@@ -7,7 +7,7 @@
 > YAML 기반 선언형 중간 표현 언어 (Spec v1.3)
 
 [![ACM Multimedia 2026 - Interactive Art](https://img.shields.io/badge/ACM%20MM%202026-Interactive%20Art%20(Accepted)-purple)](#연구)
-[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/4xf9s3fa-oU)
+[![YouTube Demo](https://img.shields.io/badge/Demo-YouTube-red)](https://youtu.be/a4oUMooHqgo)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 
 **Data Networks Lab, 충남대학교** · [networks.cnu.ac.kr](https://networks.cnu.ac.kr)
@@ -16,7 +16,7 @@
 
 ## 데모 — 응원봉 12개 동기화 (ACM MM 2026 논문 데모)
 
-[![MLML Demo](https://img.youtube.com/vi/a4oUMooHqgo/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) 
+[![MLML Demo](https://i.ytimg.com/vi/a4oUMooHqgo/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo)
 
 *IU "I Stan U" (관객이 될게) 응원봉 12개를 MLML 플레이어로 실시간 동기화한, ACM MM 2026
 Interactive Art 논문에 실린 데모입니다. 더 큰 규모의 응원봉 16개 데모는 아래
@@ -77,18 +77,33 @@ Interactive Art 논문에 실린 데모입니다. 더 큰 규모의 응원봉 16
 
 ```yaml
 metadata:
-  title: "I Stan U"
-  artist: "IU"
+  title: I Stan U
+  artist: IU
   bpm: 161.5
   key: G_major
 
 timeline:
-  - {t: 0.0,  group: 0, color: neutral, effect: breath,        intensity: 0.30}
-  - {t: 47.5, group: 0, color: null,    effect: expectation_break}
-  - {t: 48.0, group: 0, color: peak,    effect: release_burst, spatial: explosion}
+- {t: 0.0,   group: 0, color: neutral,   effect: breath,            intensity: 0.32, period: 4.0, note: intro #1}
+- {t: 8.99,  group: 0, color: peak,      effect: flash_all,         intensity: 0.65, note: energy surge}
+- {t: 12.14, group: 0, color: secondary, effect: tension_build,     intensity: 0.96, note: prechorus #1}
+- {t: 23.92, group: 0, color: null,      effect: expectation_break, intensity: 0.0,  note: blackout (end of pre-chorus)}
 ```
 
-전체 예시는 [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml)에서 볼 수 있습니다.
+모든 이벤트에는 `note` 필드가 붙어, 컴파일러가 **왜** 그 시점에 그 효과를 배치했는지가
+남습니다 — 구간 라벨, 검출된 킥 세기, 트리거가 된 에너지 전이 등. 창작 의도가 산출물
+안에서 그대로 읽힙니다.
+
+전체 예시는 [`examples/iu_istanu.mlml`](examples/iu_istanu.mlml)에 있습니다. 247.7초 트랙에서
+컴파일된 **timeline 이벤트 135개**로, 28개 효과 중 23개가 등장합니다.
+
+```bash
+# 예시 재현 (결정성을 위해 LLM 보정 비활성화)
+python mp3_to_mlml.py istanu.mp3 --no-llm
+```
+
+> `metadata`의 `title` / `artist` / `genre`만 수동 보정했고, 나머지는 전부 컴파일러
+> 출력입니다. 생성된 스크립트에는 가사가 포함되지 않습니다 — `lyric_map`은 감정 라벨과
+> 타이밍만 담습니다.
 
 ---
 
@@ -96,9 +111,9 @@ timeline:
 
 | 곡 | 응원봉 수 | 링크 |
 |------|-------------|------|
-| IU - I Stan U (관객이 될게) — ACM MM 2026 paper demo | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo?si=cgLH2zcpiooYUUDH) |
-| Bigbang - Sunset — | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA?si=mWaGRMofdggECByb ) |
-| IU - 관객이 될게 (I Stan U) | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
+| IU - 관객이 될게 (I Stan U) — ACM MM 2026 논문 데모 | 12 | [▶ YouTube](https://youtu.be/a4oUMooHqgo) |
+| Bigbang - Sunset | 12 | [▶ YouTube](https://youtu.be/cPKkz_UI0TA) |
+| IU - 관객이 될게 (I Stan U) — 확장 실험 (더 큰 규모) | 16 | [▶ YouTube](https://youtu.be/4xf9s3fa-oU) |
 | IU - Blueming | 16 | [▶ YouTube](https://youtu.be/KHmO7usMysU) |
 | IU - Shopper | 16 | [▶ YouTube](https://youtu.be/DDSjNIcno14) |
 | Aespa - Supernova | 16 | [▶ YouTube](https://youtu.be/a_pUyoQBCkE) |

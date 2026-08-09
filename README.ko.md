@@ -16,7 +16,7 @@
 
 ## 데모 — 응원봉 12개 동기화 (ACM MM 2026 논문 데모)
 
-[![MLML Demo](https://i.ytimg.com/vi/a4oUMooHqgo/maxresdefault.jpg)](https://youtu.be/a4oUMooHqgo)
+[![MLML Demo](mlml-demo.jpg)](https://youtu.be/a4oUMooHqgo)
 
 *IU "I Stan U" (관객이 될게) 응원봉 12개를 MLML 플레이어로 실시간 동기화한, ACM MM 2026
 Interactive Art 논문에 실린 데모입니다. 더 큰 규모의 응원봉 16개 데모는 아래

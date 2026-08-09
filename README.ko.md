@@ -107,6 +107,36 @@ python mp3_to_mlml.py istanu.mp3 --no-llm
 
 ---
 
+## 컴파일러
+
+`mp3_to_mlml.py`는 논문에 사용된 레퍼런스 구현입니다. 오디오를 분석해 MLML v1.3 스크립트를
+생성합니다.
+
+```bash
+pip install -r requirements.txt
+python mp3_to_mlml.py song.mp3 --no-llm
+```
+
+| 옵션 | 효과 |
+|---|---|
+| `--no-llm` | LLM 보정 생략. **재현 가능한 출력에 필수** — 보정은 비결정적입니다. |
+| `--srt song.srt` | 가사 타이밍에서 조명 큐를 도출합니다. |
+| `--include-lyric-text` | 가사 원문을 포함합니다. **기본은 꺼짐** — 가사는 대개 저작물이므로, 이 옵션을 쓰지 않으면 생성된 스크립트를 자유롭게 배포할 수 있습니다. |
+| `--no-demucs` | 소스 분리 생략 (빠르지만 정확도 하락). |
+| `--llm-model` | 보정에 쓸 모델명을 지정합니다. |
+
+`madmom`과 `demucs`는 선택 사항이며, 없으면 librosa로 폴백합니다. 이때 비트 검출 결과가
+달라지므로 모든 스크립트에 어느 경로가 실행됐는지 기록됩니다.
+
+```yaml
+metadata:
+  analysis_meta:
+    beat_source: madmom     # 또는: librosa
+    bpm_confidence: 0.87
+```
+
+---
+
 ## 데모 영상
 
 | 곡 | 응원봉 수 | 링크 |
@@ -139,7 +169,7 @@ python mp3_to_mlml.py istanu.mp3 --no-llm
 
 - 📄 **"MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick
   Choreography"** — **ACM Multimedia 2026, Interactive Art Track** 채택
-  (리우데자네이루, 2026년 11월 10–14일)
+  (리우데자네이루, 2026년 11월 10–14일) · [10.1145/3767308.3838318](https://doi.org/10.1145/3767308.3838318)
 - 🔬 전체 명세는 여기에 공개되어 있으며, BLE 제어 레퍼런스 코드는 후속 시스템 논문
   진행 상황에 따라 공개될 예정입니다.
 
@@ -151,7 +181,8 @@ python mp3_to_mlml.py istanu.mp3 --no-llm
          for Democratizing Fan Lightstick Choreography},
   author={Lee, Youngseok and Jin, Minhyuk},
   booktitle={ACM Multimedia 2026, Interactive Art Track},
-  year={2026}
+  year={2026},
+  doi={10.1145/3767308.3838318}
 }
 ```
 
@@ -166,6 +197,7 @@ python mp3_to_mlml.py istanu.mp3 --no-llm
 - [x] 실시간 플레이어 (응원봉 16개)
 - [x] LLM 기반 시나리오 생성
 - [x] ACM MM 2026 데모 영상
+- [x] MLML 컴파일러 (`mp3_to_mlml.py`) 공개
 - [ ] BLE 제어 레퍼런스 코드 (후속 논문 진행 상황에 따라)
 - [ ] MLML Hub (커뮤니티 공유 플랫폼)
 - [ ] 웹 기반 에디터

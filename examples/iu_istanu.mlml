@@ -11,6 +11,8 @@ metadata:
   - romantic
   archetype: BGM_SONG
   analysis_meta:
+    beat_source: librosa
+    fallback_reason: madmom_low_confidence
     bpm_confidence: 0.0
     kfa: 0.553
     has_stems: true

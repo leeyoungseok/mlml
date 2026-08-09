@@ -1,0 +1,21 @@
+# Required
+numpy
+scipy
+pyyaml
+librosa>=0.10
+soundfile
+
+# Optional — the pipeline degrades gracefully without these.
+# The stage that actually ran is recorded in metadata.analysis_meta.beat_source.
+#
+#   madmom   RNN beat/downbeat tracking. Often fails to build on recent
+#            Python; without it the librosa 3-way ensemble is used instead
+#            and results will differ from the published example.
+#   demucs   source separation (drums/bass/vocals stems)
+#   anthropic / openai   LLM refinement pass (non-deterministic; not needed
+#            for --no-llm, which is the reproducible path)
+#
+# madmom
+# demucs
+# anthropic
+# openai

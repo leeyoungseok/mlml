@@ -110,6 +110,36 @@ python mp3_to_mlml.py istanu.mp3 --no-llm
 
 ---
 
+## Compiler
+
+`mp3_to_mlml.py` is the reference implementation used for the paper: it analyses an
+audio file and emits an MLML v1.3 script.
+
+```bash
+pip install -r requirements.txt
+python mp3_to_mlml.py song.mp3 --no-llm
+```
+
+| Flag | Effect |
+|---|---|
+| `--no-llm` | Skip the LLM pass. **Required for reproducible output** — refinement is non-deterministic. |
+| `--srt song.srt` | Derive lighting cues from lyric timings. |
+| `--include-lyric-text` | Embed raw lyric lines. **Off by default** — lyrics are usually copyrighted, so generated scripts are safe to redistribute unless you pass this. |
+| `--no-demucs` | Skip source separation (faster, less accurate). |
+| `--llm-model` | Override the refinement model name. |
+
+`madmom` and `demucs` are optional and the pipeline falls back to librosa without them.
+Because that changes beat detection, every script records which path ran:
+
+```yaml
+metadata:
+  analysis_meta:
+    beat_source: madmom     # or: librosa
+    bpm_confidence: 0.87
+```
+
+---
+
 ## Demo Videos
 
 | Song | Lightsticks | Link |
@@ -143,7 +173,7 @@ This project is part of ongoing research at
 
 - 📄 **"MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick
   Choreography"** — accepted, **ACM Multimedia 2026, Interactive Art Track**
-  (Rio de Janeiro, Nov 10–14, 2026)
+  (Rio de Janeiro, Nov 10–14, 2026) · [10.1145/3767308.3838318](https://doi.org/10.1145/3767308.3838318)
 - 🔬 Full specification released here; BLE control reference code releasing after the
   companion systems paper is decided
 
@@ -155,7 +185,8 @@ This project is part of ongoing research at
          for Democratizing Fan Lightstick Choreography},
   author={Lee, Youngseok and Jin, Minhyuk},
   booktitle={ACM Multimedia 2026, Interactive Art Track},
-  year={2026}
+  year={2026},
+  doi={10.1145/3767308.3838318}
 }
 ```
 
@@ -170,6 +201,7 @@ See [`CITATION.cff`](CITATION.cff) for the machine-readable version.
 - [x] Real-time player (16 lightsticks)
 - [x] LLM-based scenario generation
 - [x] ACM MM 2026 demo video
+- [x] MLML compiler (`mp3_to_mlml.py`) released
 - [ ] BLE control reference code (after companion paper decision)
 - [ ] MLML Hub (community sharing platform)
 - [ ] Web-based editor

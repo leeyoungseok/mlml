@@ -8,6 +8,7 @@ authors:
     affiliation: "Chungnam National University"
   - family-names: "Jin"
     given-names: "Minhyuk"
+    affiliation: "Chungnam National University"
 preferred-citation:
   type: conference-paper
   title: "MLML: An Open Music-to-Light Markup Language for Democratizing Fan Lightstick Choreography"
@@ -23,6 +24,7 @@ preferred-citation:
     country: "BR"
   year: 2026
   month: 11
-  # TODO: DOI 및 페이지 번호는 카메라레디 제출 후 업데이트
+  doi: "10.1145/3767308.3838318"
+doi: "10.1145/3767308.3838318"
 license: Apache-2.0
 repository-code: "https://github.com/leeyoungseok/mlml"

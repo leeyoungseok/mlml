@@ -67,10 +67,10 @@ effects (16 single-device + 12 spatial), and the 9 automatic evaluation metrics
 | Artist | Device | Status |
 |--------|--------|--------|
 | IU | Official lightstick | ✅ Analyzed |
-| NMIXX | Official lightstick | ✅ Analyzed |
-| Blackpink | Official lightstick | ✅ Analyzed |
 
-> The BLE reverse-engineering reference code will be
+> In April 2026 when we prepared the paper submission for ACM MM 2026, we have analyzed a single lightstick BLE protoocol (IKE).
+> As of Aug. 2026, we're working on a lot of K-pop lightsticks to analyze their BLE protocols.
+> The BLE reverse-engineering protocols and reference codes will be
 > released in a separate repository after the companion systems paper has completed
 > peer review.
 

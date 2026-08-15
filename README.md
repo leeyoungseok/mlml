@@ -65,7 +65,7 @@ effects (16 single-device + 12 spatial), and the 9 automatic evaluation metrics
 ## Supported Lightsticks (protocol families analyzed)
 
 | 사진 | 아티스트 | 응원봉명 | 기획사 | 데모 영상 | 
-|---|---|---|---|:---:|:---:|---|
+|---|---|---|---|---|
 | <img src="docs/images/iu.jpg" width="80"> | IU (아이유) | I-KE OFL V3 | EDAM Ent. | [▶ YouTube](https://youtu.be/a4oUMooHqgo)|
 
 > In April 2026 when we prepared the paper submission for ACM MM 2026, we have analyzed a single lightstick BLE protoocol (IKE).
